@@ -11,3 +11,4 @@ The sensor is connected via I2C, SDA on GPIO0 and SCL on GPIO1. The Ethernet is 
 Replace the IP addresses in [main.c](main.c) with ones coresponding to your configuration. The board will send data to port 1234 of the destination computer which can be received with netcat on Linux, by listening to UDP connections on port 1234, like so: \
 `nc -u -l 0.0.0.0 1234 -v`
 
+![netcat](https://user-images.githubusercontent.com/60291077/186031307-86242f87-2997-4f30-bdbb-a81be758e10a.PNG)
