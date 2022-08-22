@@ -1,0 +1,6 @@
+[submodule "Pico-10BASE-T-Library"]
+	path = Pico-10BASE-T-Library
+	url = https://github.com/tvlad1234/Pico-10BASE-T-Library.git
+[submodule "pico-bmp085Driv"]
+	path = pico-bmp085Driv
+	url = https://github.com/tvlad1234/pico-bmp085Driv.git
