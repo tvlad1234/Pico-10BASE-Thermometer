@@ -5,12 +5,13 @@
 
 int main()
 {
-    // Initialize Ethernet
-    eth_core_start();
 
     /// Place your IP addresses
     eth_set_ip(192, 168, 131, 176);   /// here
-    eth_set_dest(192, 168, 131, 146); /// and here
+    eth_set_dest(192, 168, 131, 140); /// and here
+
+    // Initialize Ethernet
+    eth_core_start();
 
     // Initialize sensor
     BMP085_setI2C(i2c_default, 0, 1, 0x77); // SDA on GPIO0, SCL on GPIO1
