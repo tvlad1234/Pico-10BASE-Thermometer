@@ -4,11 +4,14 @@
 #include "bmp085.h"
 
 int main()
-{
+{   
+    // Initialize LED pin
+    gpio_init(PICO_DEFAULT_LED_PIN);
+    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 
-    /// Place your IP addresses
-    eth_set_ip(192, 168, 131, 176);   /// here
-    eth_set_dest(192, 168, 131, 140); /// and here
+    /// Set the IP addresses. Replace with ones coresponding to your configuration.
+    eth_set_ip(192, 168, 131, 180);   /// here
+    eth_set_dest(192, 168, 131, 146); /// and here
 
     // Initialize Ethernet
     eth_core_start();
@@ -33,7 +36,9 @@ int main()
             udp_printf("Sensor error!\n");
         }
 
+        gpio_put(PICO_DEFAULT_LED_PIN, counter % 2); // blink the LED
         counter++;
+
         sleep_ms(2500);
     }
 }
