@@ -12,3 +12,4 @@ Replace the IP addresses in [main.c](main.c) with ones coresponding to your conf
 `nc -u -l 0.0.0.0 1234 -v`
 
 ![netcat](https://user-images.githubusercontent.com/60291077/186031307-86242f87-2997-4f30-bdbb-a81be758e10a.PNG)
+![pico_ethernet](https://user-images.githubusercontent.com/60291077/187030248-19ae3773-b147-4e16-92fa-5d62651450b2.jpg)
