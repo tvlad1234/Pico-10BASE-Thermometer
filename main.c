@@ -4,14 +4,17 @@
 #include "bmp085.h"
 
 int main()
-{   
+{
     // Initialize LED pin
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 
     /// Set the IP addresses. Replace with ones coresponding to your configuration.
-    eth_set_ip(192, 168, 131, 180);   /// here
+    eth_set_ip(192, 168, 131, 181);   /// here
     eth_set_dest(192, 168, 131, 146); /// and here
+
+    // Set the UDP port
+    udp_set_port(1234);
 
     // Initialize Ethernet
     eth_core_start();
