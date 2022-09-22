@@ -10,11 +10,11 @@ int main()
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 
     /// Set the IP addresses. Replace with ones coresponding to your configuration.
-    eth_set_ip(192, 168, 131, 181);   /// here
-    eth_set_dest(192, 168, 131, 146); /// and here
+    eth_set_ip(192, 168, 131, 179);   /// here
+    dest_ip_t dst_ip = {192,168,131,146}; /// and here
 
     // Set the UDP port
-    udp_set_port(1234);
+    uint16_t dst_port = 1234;
 
     // Initialize Ethernet
     eth_core_start();
@@ -32,11 +32,11 @@ int main()
         {
             temp = BMP085_readTemperature();
             pres = BMP085_readPressure() / 100.0;
-            udp_printf("%.1f °C  %.1f hPa  %d\n", temp, pres, counter);
+            udp_printf(dst_ip, dst_port, "%.1f °C  %.1f hPa  %d\n", temp, pres, counter);
         }
         else
         {
-            udp_printf("Sensor error!\n");
+             udp_printf(dst_ip, dst_port, "Sensor init error!\n");
         }
 
         gpio_put(PICO_DEFAULT_LED_PIN, counter % 2); // blink the LED
